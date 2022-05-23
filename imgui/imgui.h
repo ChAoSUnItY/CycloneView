@@ -81,7 +81,7 @@ Index of this file:
 
 // Helper Macros
 #ifndef IM_ASSERT
-#include <assert.h>
+#include <cassert>
 #define IM_ASSERT(_EXPR)            assert(_EXPR)                               // You can override the default assert handler by editing imconfig.h
 #endif
 #define IM_ARRAYSIZE(_ARR)          ((int)(sizeof(_ARR) / sizeof(*(_ARR))))     // Size of a static C-style array. Don't use on pointers!

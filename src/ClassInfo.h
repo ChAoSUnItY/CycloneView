@@ -11,7 +11,7 @@ namespace CycloneView {
 
     class ClassInfo {
     public:
-        CycloneView::Assertion<char, 8> magicNumber;
+        CycloneView::Assertion<4> magicNumber;
 
         ClassInfo();
     };

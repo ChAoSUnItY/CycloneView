@@ -30,31 +30,8 @@ namespace CycloneView {
 
         this->buf = bytes;
 
-        assert<std::string, 8>();
+        info.magicNumber = assertLen<4>();
 
         return info;
-    }
-
-    template<typename T, int L>
-    Assertion<T, L> ClassReader::assert() {
-        Assertion<T, L> assertion{};
-
-        if constexpr(std::is_same<T, char>()) {
-            std::array<char, L> holder{};
-
-            if (pos + L < this->buf.size()) {
-                for (int i = 0; i < L; i++, pos++) {
-                    holder[i] = this->buf[pos];
-                }
-
-                assertion.message = "Ok";
-            } else {
-                assertion.message = fmt::format("Expected {} bytes but have {} bytes left on buffer", L, this->buf.size() - pos + 1);
-            }
-
-            assertion.result = holder;
-        }
-
-        return assertion;
     }
 } // CycloneView

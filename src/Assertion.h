@@ -5,13 +5,14 @@
 #ifndef CYCLONEVIEW_ASSERTION_H
 #define CYCLONEVIEW_ASSERTION_H
 
+#include <string>
 #include <array>
 
 namespace CycloneView {
-    template<typename name, int L>
+    template<int L>
     struct Assertion {
-        std::array<name, L> result;
-        const char *message;
+        std::array<char, L> result;
+        std::string message;
     };
 } // CycloneView
 
